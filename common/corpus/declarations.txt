@@ -711,8 +711,8 @@ Classes with decorators
       (decorator (identifier))
       (public_field_definition (string (string_fragment)) (type_annotation (type_identifier)) (string (string_fragment)))
 
-      (decorator (identifier))
       (method_definition
+        (decorator (identifier))
         (property_identifier)
         (formal_parameters
           (required_parameter
@@ -1022,7 +1022,7 @@ class Foo {
         (accessibility_modifier)
         (property_identifier)
         (formal_parameters)
-        (statement_block))))) 
+        (statement_block)))))
 
 =====================
 Override modifier

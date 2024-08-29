@@ -141,7 +141,7 @@ module.exports = function defineGrammar(dialect) {
         optional('declare'),
         optional($.accessibility_modifier),
         choice(
-          seq(optional('static'), optional($.override_modifier), optional('readonly')), 
+          seq(optional('static'), optional($.override_modifier), optional('readonly')),
           seq(optional('abstract'), optional('readonly')),
           seq(optional('readonly'), optional('abstract')),
         ),
@@ -341,14 +341,13 @@ module.exports = function defineGrammar(dialect) {
       class_body: $ => seq(
         '{',
         repeat(choice(
-          $.decorator,
           seq($.method_definition, optional($._semicolon)),
           // As it happens for functions, the semicolon insertion should not
           // happen if a block follows the closing paren, because then it's a
           // *definition*, not a declaration. Example:
           //     public foo()
           //     { <--- this brace made the method signature become a definition
-          //     }      
+          //     }
           // The same rule applies for functions and that's why we use
           // "_function_signature_automatic_semicolon".
           seq($.method_signature, choice($._function_signature_automatic_semicolon, ',')),
@@ -366,6 +365,7 @@ module.exports = function defineGrammar(dialect) {
       ),
 
       method_definition: $ => prec.left(seq(
+        repeat(field('decorator', $.decorator)),
         optional($.accessibility_modifier),
         optional('static'),
         optional($.override_modifier),

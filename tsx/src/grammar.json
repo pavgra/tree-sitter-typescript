@@ -6215,10 +6215,6 @@
             "type": "CHOICE",
             "members": [
               {
-                "type": "SYMBOL",
-                "name": "decorator"
-              },
-              {
                 "type": "SEQ",
                 "members": [
                   {
@@ -6460,6 +6456,17 @@
       "content": {
         "type": "SEQ",
         "members": [
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "FIELD",
+              "name": "decorator",
+              "content": {
+                "type": "SYMBOL",
+                "name": "decorator"
+              }
+            }
+          },
           {
             "type": "CHOICE",
             "members": [

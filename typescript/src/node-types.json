@@ -1357,10 +1357,6 @@
           "named": true
         },
         {
-          "type": "decorator",
-          "named": true
-        },
-        {
           "type": "index_signature",
           "named": true
         },
@@ -3670,6 +3666,16 @@
         "types": [
           {
             "type": "statement_block",
+            "named": true
+          }
+        ]
+      },
+      "decorator": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "decorator",
             "named": true
           }
         ]
